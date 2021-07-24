@@ -23,5 +23,6 @@ The following **bonus** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='http://g.recordit.co/ZeV1QpsiFz.gif' width='' alt='http://g.recordit.co/ZeV1QpsiFz.gif' />
+<img src="http://g.recordit.co/ZeV1QpsiFz.gif" width=250><br>
+
 
