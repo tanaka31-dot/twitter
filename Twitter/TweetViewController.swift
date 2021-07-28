@@ -13,11 +13,23 @@ class TweetViewController: UIViewController {
     
     @IBOutlet weak var tweetTextView: UITextView!
     
+    @IBOutlet weak var tweetButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tweetTextView.becomeFirstResponder()
+        tweetTextView.layer.borderWidth = 3.0
+        tweetTextView.layer.borderColor = UIColor.black.cgColor
+        tweetTextView.layer.cornerRadius = 10.0
+        tweetTextView.clipsToBounds = true
+        tweetButton.isEnabled = false
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textViewDidBeginEditing(tweetTextView)
     }
     
     
@@ -28,6 +40,7 @@ class TweetViewController: UIViewController {
     
     
     @IBAction func tweet(_ sender: Any) {
+        
         if (!tweetTextView.text.isEmpty) {
             TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success: {
                 self.dismiss(animated: true, completion: nil)
@@ -42,6 +55,11 @@ class TweetViewController: UIViewController {
         }
     }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        tweetButton.isEnabled = true
+        
+    }
+
     /*
     // MARK: - Navigation
 
