@@ -9,11 +9,19 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        loginButton.layer.cornerRadius = 20.0
+        loginButton.clipsToBounds = true
+        loginButton.layer.shadowRadius = 15.0
+        loginButton.layer.shadowOpacity = 0.2
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

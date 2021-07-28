@@ -41,6 +41,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginButton" destination="pji-c4-SN0" id="iSc-XY-qtI"/>
                         <segue destination="EFu-7S-mru" kind="presentation" identifier="loginToHome" id="b3Y-r1-b1e"/>
                     </connections>
                 </viewController>
@@ -162,11 +163,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-Icon" translatesAutoresizingMaskIntoConstraints="NO" id="4Gy-5W-oiQ">
+                                <rect key="frame" x="0.0" y="44" width="65" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="hsB-sM-t2l"/>
+                                    <constraint firstAttribute="width" constant="65" id="sxY-r3-fBg"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="280" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGh-2j-UB1">
+                                <rect key="frame" x="315" y="268" width="40" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="bIC-hd-Ca6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nLK-hu-ol4">
-                                <rect key="frame" x="0.0" y="44" width="375" height="128"/>
+                                <rect key="frame" x="75" y="69" width="290" height="189"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="ucL-RA-Ikz"/>
+                                    <constraint firstAttribute="height" constant="189" id="alO-wf-Oed"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -176,9 +193,13 @@
                         <viewLayoutGuide key="safeArea" id="4Oz-iO-emq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="4Oz-iO-emq" firstAttribute="trailing" secondItem="nLK-hu-ol4" secondAttribute="trailing" id="Qnb-M3-7vl"/>
-                            <constraint firstItem="nLK-hu-ol4" firstAttribute="top" secondItem="4Oz-iO-emq" secondAttribute="top" id="qYr-Pf-mY7"/>
-                            <constraint firstItem="nLK-hu-ol4" firstAttribute="leading" secondItem="4Oz-iO-emq" secondAttribute="leading" id="yV6-jA-og9"/>
+                            <constraint firstItem="4Oz-iO-emq" firstAttribute="trailing" secondItem="nLK-hu-ol4" secondAttribute="trailing" constant="10" id="A1L-4E-rfy"/>
+                            <constraint firstItem="4Gy-5W-oiQ" firstAttribute="leading" secondItem="4Oz-iO-emq" secondAttribute="leading" id="EM1-jJ-WCh"/>
+                            <constraint firstItem="nLK-hu-ol4" firstAttribute="top" secondItem="4Oz-iO-emq" secondAttribute="top" constant="25" id="PYF-E3-KrR"/>
+                            <constraint firstItem="HGh-2j-UB1" firstAttribute="top" secondItem="nLK-hu-ol4" secondAttribute="bottom" constant="10" id="Qg3-BU-tXX"/>
+                            <constraint firstItem="4Oz-iO-emq" firstAttribute="trailing" secondItem="HGh-2j-UB1" secondAttribute="trailing" constant="20" id="iny-H6-14a"/>
+                            <constraint firstItem="nLK-hu-ol4" firstAttribute="leading" secondItem="4Gy-5W-oiQ" secondAttribute="trailing" constant="10" id="jAF-wQ-qko"/>
+                            <constraint firstItem="4Gy-5W-oiQ" firstAttribute="top" secondItem="4Oz-iO-emq" secondAttribute="top" id="xTl-yj-8Q7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Bda-pC-hmK">
@@ -196,13 +217,15 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="textCountDown" destination="HGh-2j-UB1" id="YHI-lU-qjm"/>
                         <outlet property="tweetButton" destination="xnN-Qa-wei" id="NK0-55-eyu"/>
                         <outlet property="tweetTextView" destination="nLK-hu-ol4" id="JfH-v2-sKH"/>
+                        <outlet property="userProfile" destination="4Gy-5W-oiQ" id="npb-BS-rVG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YB-2i-9zh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3279" y="86"/>
+            <point key="canvasLocation" x="-3279.1999999999998" y="85.907046476761622"/>
         </scene>
         <!--Home-->
         <scene sceneID="Yop-kJ-RSo">
@@ -250,6 +273,7 @@
     </scenes>
     <resources>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="profile-Icon" width="26" height="26"/>
         <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
