@@ -39,6 +39,13 @@ class TweetViewController: UIViewController,UITextViewDelegate{
         
         tweetButton.isEnabled = false
         
+        let button = UIButton()
+        button.layer.cornerRadius = 20.0
+        button.clipsToBounds = true
+        button.layer.shadowRadius = 15.0
+        button.layer.shadowOpacity = 0.2
+        
+        
         // Do any additional setup after loading the view.
     }
     
